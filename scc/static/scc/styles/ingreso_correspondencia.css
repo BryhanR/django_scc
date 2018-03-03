@@ -1,0 +1,24 @@
+
+
+
+ #ingreso_correspondencia .opened_calendar{
+
+            width: 60%;
+     cursor: pointer;
+   }
+
+ #ingreso_correspondencia .opened_calendar .table-condensed{
+
+            width: 100%;
+     text-align: center;
+ }
+
+
+  #ingreso_correspondencia .opened_calendar th{
+     text-align: center;
+ }
+
+ #ingreso_correspondencia .opened_calendar .prev{
+     text-align: right;
+ }
+

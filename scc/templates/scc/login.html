@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    {% load staticfiles %}
+    <link rel="shortcut icon" href="{% static 'scc/images/ico.ico' %}" type="image/ico" />
+    <script src="{% static 'scc/js/jquery-3.2.1.min.js' %}" type="application/javascript"></script>
+
+
+    <link rel="stylesheet" href="{% static 'scc/css/bootstrap.min.css'%}" type="text/css">
+    <script src="{% static 'scc/js/bootstrap.min.js' %}" type="application/javascript"></script>
+
+    <link rel="stylesheet" href="{% static 'scc/fonts/font-awesome-4.7.0/css/font-awesome.min.css'%}">
+
+
+
+</head>
+<body background="{% static 'scc/images/background.png' %}">
+	<div class="container">
+  <!-- Modal -->
+  <div  class="modal fade"  id="myModal" role="dialog" >
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content" >
+        <div class="modal-header" style="padding:35px 50px;">
+
+          <h4><i class="fa fa-lock fa-lg"></i> Login</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+
+
+            {% if form.errors %}
+                <div class="alert alert-danger" id= "mensaje">
+                    <STRONG>Error: </STRONG>
+                    {% for field,error in form.errors.items %}
+
+                            <li> {{ error|striptags }}</li>
+
+	                {% endfor %}
+                </div>
+            {% endif %}
+          <form role="form" id="formu"  method="POST" action="{% url 'login' %}">
+              {% csrf_token %}
+            <div class="form-group">
+              <label for="usrname" id="hty">
+                  <i class="fa fa-user-circle fa-sm"></i> Username
+              </label>
+              <input type="text" class="form-control" name = "username" id="usrname" placeholder="Ingrese su usuario" autofocus="">
+            </div>
+            <div class="form-group">
+              <label for="psw"><i class="fa fa-key fa-lg"></i> Password</label>
+              <input type="password" class="form-control" name = "password" id="psw" placeholder="Ingrese su contraseña" focus>
+            </div>
+              <button type="submit" class="btn btn-success" id = "login">
+                  <i class="fa fa-unlock-alt fa-sm"></i> Login
+              </button>
+			  <button  type="button" class="btn btn-danger  pull-right" >
+                  <i class="fa fa-ban fa-sm"></i> Cancelar
+              </button>
+        <p>
+            <a>¿Olvidó su contraseña?</a>
+        </p>
+          </form>
+        </div>
+        <div class="modal-footer">
+			<div class="m-auto">
+                <h3><img src="{% static 'scc/images/situn2.png' %}" WIDTH=90 HEIGHT=50></h3>
+            </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <!-- Modal -->
+  <div  class="modal fade"  id="myModalPass" role="dialog" >
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content" >
+        <div class="modal-header" style="padding:35px 50px;">
+
+          <h4><span class="glyphicon glyphicon-lock"></span> Recuperacion de Contraseña</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+            <div class="form-group">
+              <label for="usrnamer" id="hty"><span class="glyphicon glyphicon-user"></span> Username</label>
+              <input type="text" class="form-control" name = "usernamer" id="usrnamer" placeholder="Ingrese su usuario" autofocus="">
+            </div>
+            <button  class="btn btn-success" onclick="recuperarPassword()">
+              <span class="glyphicon glyphicon-off"></span>
+              Recuperar
+            </button>
+            <button  onclick="cerrar()" class="btn btn-danger  pull-right" ><span class="glyphicon glyphicon-remove"></span> Cancelar</button>
+
+        </div>
+        <div class="modal-footer">
+      <center>
+        <h3><IMG src="{% static 'scc/images/situn2.png' %}" WIDTH=90 HEIGHT=50></h3>
+      </center>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#myModal').modal({ backdrop: 'static', keyboard: false });
+    })
+</script>
+
+</body>
+
+</html>

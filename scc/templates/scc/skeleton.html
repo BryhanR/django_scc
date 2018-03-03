@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SCC-SITUN</title>
+
+    {% load staticfiles %}
+
+
+    <link rel="shortcut icon" href="{% static 'scc/images/ico.ico' %}" type="image/ico" />
+
+    <script src="{% static 'scc/js/jquery-3.2.1.min.js' %}" type="application/javascript"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'scc/styles/main.css'%}" type="text/css">
+    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+    <script src="{% static 'scc/js/bootstrap.min.js' %}" type="application/javascript"></script>
+    <script src="{% static "scc/js/ingreso_correspondencia.js" %}" type="application/javascript"></script>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+<link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" type="text/css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+    <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+    <style type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css"></style>
+
+</head>
+
+<body background="{% static 'scc/images/background.png' %}">
+{% block menu %}
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded bg-danger p-1">
+      <a class="navbar-brand p-0" href="#">
+          <img src="{% static 'scc/images/logo.png' %}" alt="SCC-SITUN" width="80px">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <!--<div class="navbar-nav ml-auto">-->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-item nav-link active" href="ingreso">Ingreso de Correspondencia <span class="sr-only">(current)</span></a>
+                </li>
+
+                 <li class="nav-item">
+                     <a class="nav-item nav-link" href="enlace">Enlace</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-item nav-link" href="busqueda">Búsqueda de documentos</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-item nav-link" href="reportes">Reportes</a>
+                 </li>
+                 <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Usuarios
+                     </a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        </div>
+                 </li>
+                 <li class="nav-item dropdown">
+                    <a class="nav-item nav-link disabled" href="#">Ayuda</a>
+                 </li>
+            </ul>
+
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ user_name }}
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right bg-danger" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Editar Perfil</a>
+                        <a class="dropdown-item" href="logout">Cerrar Sesion</a>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+     <!-- </div>-->
+    </nav>
+
+    {% endblock %}
+
+    {% block header %}
+    {% endblock %}
+
+    <div class="col-md-12" style="margin-top: 2em;">
+        {% block body %}
+        {% endblock %}
+    </div>
+
+
+    {% block footer %}
+        <footer class="footer">
+          <div class="container">
+            <span class="text-muted">Place sticky footer content here.</span>
+          </div>
+        </footer>
+    {% endblock %}
+
+
+
+</body>
+</html>

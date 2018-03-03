@@ -1,0 +1,164 @@
+{% extends 'scc/skeleton.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Ingreso de Correspondencia</title>
+
+</head>
+<body>
+
+    {% block body %}
+        <div id="ingreso_correspondencia" class="row">
+            <div class="form-group col-md-7 input-group-sm d-inline-block">
+                <form>
+                      <div class="row">
+                        <div class="form-group col-3 input-group-sm">
+                            <label for="inputEmail4">Fecha de recibido</label>
+                            <div class='input-group date' id='dateRecibido'>
+                                <input type='text' class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="fa fa-calendar">
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group col-3 input-group-sm">
+                          <label for="inputPassword4">Fecha de oficio</label>
+                          <div class='input-group date' id='dateOficio'>
+                                <input type='text' class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="fa fa-calendar">
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group col-6 input-group-sm">
+                          <label for="inputPassword4">Número de oficio</label>
+                          <input type="text" class="form-control" id="" placeholder="# Oficio">
+                        </div>
+                      </div>
+                      <div class="row">
+                          <div class="form-group col-md-6 input-group-sm mb-1">
+                            <label for="inputAddress2">Asunto</label>
+                            <textarea class="form-control" style="height: 69px;" id="" placeholder="Asunto"></textarea>
+                          </div>
+                          <div class="form-group col-md-6 input-group-sm mb-1">
+                              <div class="row">
+                                  <div class="form-group col-md-12 input-group-sm mb-1">
+                                      <label>Alarma</label>
+                                      <hr style="margin-bottom:0px !important; margin-top:0px !important; ">
+                                  </div>
+                                  <div class="form-group col-md-6 input-group-sm">
+                                      <label for="inputEmail4">Fecha de aviso</label>
+                                      <div class='input-group date' id='dateAlarmaAviso'>
+                                            <input type='text' class="form-control" />
+                                            <span class="input-group-addon">
+                                                <span class="fa fa-calendar">
+                                                </span>
+                                            </span>
+                                        </div>
+                                  </div>
+                                  <div class="form-group col-md-6 input-group-sm">
+                                      <label for="inputPassword4">Fecha límite</label>
+                                      <div class='input-group date' id='dateRecibido'>
+                                          <input type='text' class="form-control" />
+                                          <span class="input-group-addon">
+                                              <span class="fa fa-calendar">
+                                              </span>
+                                          </span>
+                                      </div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="form-group col-md-4 input-group-sm">
+                          <label for="inputCity">Destinatario</label>
+                          <input type="text" class="form-control" id="">
+                        </div>
+                        <div class="form-group col-md-4 input-group-sm">
+                          <label for="inputState">Remitente</label>
+                          <input type="text" class="form-control" id="">
+                        </div>
+                        <div class="form-group col-md-4 input-group-sm">
+                          <label for="inputZip">Recibido</label>
+                          <input type="text" class="form-control" id="" readonly value="{{ user_name }}">
+                        </div>
+                      </div>
+                      <div class="row">
+                          <div class="form-group col-md-7 input-group-sm">
+                              <label for="inputAddress">Copia</label>
+                              <input type="text" class="form-control" id="" placeholder="Copia">
+                                <div class="col-auto">
+                                    <input type="checkbox" id="chkNoCopy">
+                                    <label class="custom-control-description" for="chkNoCopy" >Sin Copia.</label>
+                                </div>
+                          </div>
+                          <div class="form-group col-md-5 input-group-sm">
+                              <label for="exampleInputFile">Adjunto</label>
+                              <label class="custom-file" id="customCss">
+                                  <input type="file" class="custom-file-input" id="exampleInputFile" aria-describedby="fileHelp">
+                                  <span class="custom-file-control form-control-file"></span>
+                              </label>
+                          </div>
+
+
+                      </div>
+                      <div class="row">
+                          <div class="form-group col-md-6">
+                            <label for="inputAddress2">Estado</label>
+                            <textarea class="form-control" id="" placeholder="Estado"></textarea>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="inputAddress2">Observaciones</label>
+                            <textarea class="form-control" id="" placeholder="Observaciones"></textarea>
+                          </div>
+                      </div>
+                      <div class="row text-center">
+                          <div class="form-group col-md-12 mb-0">
+                              <input class="btn-sucess d-inline-block" type="button" value="Guardar">
+                              <input class="btn-danger d-inline-block"  type="button" value="Cancelar">
+                          </div>
+
+                      </div>
+        </form>
+            </div>
+            <div class="form-group col-md-5 input-group-sm d-inline-block border-top-2 ">
+                <div class="row" style="height: 60%;">
+                    <div class="card w-100 bg-danger rounded">
+                        <div class="card-header text-danger text-center text-weig">
+                            Alarmas del día
+                        </div>
+                        <div class="card-block bg-faded p-1">
+                            <table class="table table-hover">
+                                <thead class="">
+                                    <tr class="bg-danger">
+                                        <th>N° Oficio</th>
+                                        <th>Fecha de aviso</th>
+                                        <th>Fecha límite</th>
+                                    </tr>
+                                </thead>
+
+                            </table>
+                      </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="opened_calendar bg-danger mt-2"></div>
+                </div>
+            </div>
+
+        </div>
+
+    {% endblock %}
+
+
+
+</body>
+</html>

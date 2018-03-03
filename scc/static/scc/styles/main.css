@@ -1,0 +1,43 @@
+@import "../css/bootstrap.min.css";
+@import "skeleton.css";
+@import "ingreso_correspondencia.css";
+
+
+.custom-file{
+overflow: hidden;
+height: 1.7rem;
+}
+
+.custom-file-input{
+        height: 1.7rem !important;
+}
+
+  .custom-file-control{
+
+  white-space: nowrap;
+  height: 1.7rem;
+  padding: 0 !important;
+
+  }
+
+  .custom-file .custom-file-control::after{
+
+      content: "Select file...";
+      height: 1.7rem;
+      padding: 0;
+
+  }
+
+  .custom-file .custom-file-control::before{
+
+      content: "Click me";
+      height: 1.7rem;
+      padding: 0;
+
+  }
+
+  .custom-file-control.selected::after {
+  content: "" !important;
+}
+
+

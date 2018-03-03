@@ -1,0 +1,100 @@
+{% extends 'scc/skeleton.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Busqueda de Correspondencia</title>
+</head>
+<body>
+
+    {% block header %}
+        <h1>Busqueda</h1>
+    {% endblock %}
+
+    {% block body %}
+
+        <div>
+            <select>
+                <option># Oficio</option>
+                <option>Asunto</option>
+                <option>Destinatario</option>
+            </select>
+
+            <input type="text">
+        </div>
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <thead class="bg-danger">
+                    <tr>
+                        <th rowspan="2" class="text-center align-middle">
+                            # oficio
+                        </th>
+                        <th colspan="2" class="text-center align-middle">
+                            Fecha
+
+                        </th>
+                        <th rowspan="2" class="text-center align-middle">
+                            Asunto
+                        </th>
+                        <th rowspan="2" class="text-center align-middle">
+                            Destinatario
+                        </th>
+                        <th rowspan="2" class="text-center align-middle">
+                            Copia
+                        </th>
+                        <th rowspan="2" class="text-center align-middle">
+                            Remitente
+                        </th>
+                        <th rowspan="2" class="text-center align-middle">
+                            Recibido
+                        </th>
+                        <th rowspan="2" class="text-center align-middle">
+                            Estado
+                        </th>
+                        <th rowspan="2" class="text-center align-middle">
+                            Enlaces
+                        </th>
+                        <th rowspan="2" class="text-center align-middle">
+                            Edicion
+                        </th>
+                        <th rowspan="2" class="text-center align-middle col-1 ">
+                            Alarma
+                        </th>
+                        <th rowspan="2" class="text-center align-middle col-sm-1">
+                            Documento
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            Oficio
+                        </th>
+                            <th>
+                            Recibido
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for doc in documents  %}
+                        <tr>
+                            <td>
+                                {{ doc }}
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr class="text-center">
+                            <td colspan="14">
+                                No se han encontrado correspondencias
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+
+        </table>
+        </div>
+
+
+    {% endblock %}
+
+</body>
+</html>

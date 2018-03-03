@@ -1,0 +1,55 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 35px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 35px;
+  line-height: 35px; /* Vertically center the text there */
+  background-color: red;//#f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  padding: 60px 15px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+/*
+.form-control {
+
+    #re{
+         width: 70% !important;
+    background-color: red !important;
+    }
+
+
+}*/
+
+
+
+.ui-datepicker {
+    font-size:9pt !important;
+    width: 13em !important;
+}
